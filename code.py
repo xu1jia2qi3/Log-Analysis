@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 import psycopg2
 
-try:
-    db = psycopg2.connect("dbname=news")
-except:
-    print("Unable to connect to the database")
-
 
 def most_popular_three_articles():
+    db = psycopg2.connect("dbname=news")
     cursor = db.cursor()
     cursor.execute("select articles.title, count(log.path) as views "
                    "from articles join log "
@@ -21,6 +17,7 @@ def most_popular_three_articles():
 
 
 def most_popular_authors():
+    db = psycopg2.connect("dbname=news")
     cursor = db.cursor()
     cursor.execute("select authors.name, count(*) as views "
                    "from articles, authors, log "
@@ -34,6 +31,7 @@ def most_popular_authors():
 
 
 def percentageerror():
+    db = psycopg2.connect("dbname=news")
     cursor = db.cursor()
     cursor.execute("create view error_num as "
                    "select cast(time as date),count(*) as error from log "
@@ -61,7 +59,3 @@ def percentageerror():
 most_popular_authors()
 most_popular_three_articles()
 percentageerror()
-
-
-
-
