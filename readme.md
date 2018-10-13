@@ -44,7 +44,7 @@
   ```
   
 #### Running the queries:
-  1. From the vagrant directory inside the virtual machine,run logs.py using:
+  1. From the vagrant directory inside the virtual machine,run code.py using:
   ```
      python code.py
   ```
