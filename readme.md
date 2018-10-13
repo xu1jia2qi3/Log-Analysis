@@ -40,13 +40,13 @@
   
   3. check the database tables by
   ```
-    $ /dt
+     /dt
   ```
   
 #### Running the queries:
   1. From the vagrant directory inside the virtual machine,run logs.py using:
   ```
-    $ python code.py
+     python code.py
   ```
   
 
